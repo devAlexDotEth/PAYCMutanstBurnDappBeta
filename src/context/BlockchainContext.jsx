@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { ethers } from "ethers";
-import ApeContractData from "../blockchain/ApeContract";
-import StakingContractData from "../blockchain/StakingContract";
+import MutantsContractData from "../blockchain/MutantsContract";
+import PAYCSerumsContractData from "../blockchain/PAYCSerumsContract";
 
 import RewardContractData from "../blockchain/RewardContract";
 import Swal from "sweetalert2";
@@ -164,8 +164,8 @@ export const BlockchainContextProvider = (props) => {
 
     const provider = getProvider();
     const ApeContract = new ethers.Contract(
-      ApeContractData.address,
-      ApeContractData.abi,
+      MutantsContractData.address,
+      MutantsContractData.abi,
       provider
     );
     setMainContract(ApeContract);
@@ -197,8 +197,8 @@ export const BlockchainContextProvider = (props) => {
 
     const provider = getProvider();
     const StakingContract = new ethers.Contract(
-      StakingContractData.address,
-      StakingContractData.abi,
+      PAYCSerumsContractData.address,
+      PAYCSerumsContractData.abi,
       provider
     );
     setStakeContract(StakingContract);
@@ -219,8 +219,8 @@ export const BlockchainContextProvider = (props) => {
     // Get Ape Contract
     const provider = getProvider();
     const apeContract = new ethers.Contract(
-      ApeContractData.address,
-      ApeContractData.abi,
+      MutantsContractData.address,
+      MutantsContractData.abi,
       provider
     );
 
@@ -468,8 +468,8 @@ export const BlockchainContextProvider = (props) => {
       // Get Ape Contract
       const provider = getProvider();
       const apeContract = new ethers.Contract(
-        ApeContractData.address,
-        ApeContractData.abi,
+        MutantsContractData.address,
+        MutantsContractData.abi,
         provider
       );
 
@@ -486,8 +486,8 @@ export const BlockchainContextProvider = (props) => {
       // Get Ape Contract
       const provider = getProvider();
       const apeContract = new ethers.Contract(
-        ApeContractData.address,
-        ApeContractData.abi,
+        MutantsContractData.address,
+        MutantsContractData.abi,
         provider
       );
       const balance = await apeContract.balanceOf(signerAddress);
@@ -502,8 +502,8 @@ export const BlockchainContextProvider = (props) => {
       // Get Staking Contract
       const provider = getProvider();
       const stakingContract = new ethers.Contract(
-        StakingContractData.address,
-        StakingContractData.abi,
+        PAYCSerumsContractData.address,
+        PAYCSerumsContractData.abi,
         provider
       );
       const balance = await stakingContract.checkHowManyStaked(signerAddress);
@@ -517,8 +517,8 @@ export const BlockchainContextProvider = (props) => {
       // Get Staking Contract
       const provider = getProvider();
       const stakingContract = new ethers.Contract(
-        StakingContractData.address,
-        StakingContractData.abi,
+        PAYCSerumsContractData.address,
+        PAYCSerumsContractData.abi,
         provider
       );
       const balance = await stakingContract.totalNFTStaked();
@@ -532,8 +532,8 @@ export const BlockchainContextProvider = (props) => {
       // Get Staking Contract
       const provider = getProvider();
       const stakingContract = new ethers.Contract(
-        StakingContractData.address,
-        StakingContractData.abi,
+        PAYCSerumsContractData.address,
+        PAYCSerumsContractData.abi,
         provider
       );
       let balance = await stakingContract.calculateReward(signerAddress);
